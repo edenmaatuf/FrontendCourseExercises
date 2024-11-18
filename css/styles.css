@@ -1,0 +1,49 @@
+/* הגדרות כלליות */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* רקע כללי */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* מסגרות אחידות */
+.header, .main, .footer {
+    width: 80%; /* רוחב אחיד */
+    border: 2px solid black; /* מסגרת שחורה בלבד */
+    margin: 10px 0; /* רווח בין המסגרות */
+    padding: 20px; /* ריווח פנימי */
+    text-align: center;
+    background-color: transparent; /* רקע שקוף */
+}
+
+/* גובה מותאם */
+.header, .footer {
+    height: 100px; /* גובה לכותרת ולתחתית */
+}
+
+.main {
+    flex-grow: 1; /* תוכן המרכזי גמיש */
+}
+
+/* טקסט */
+.header h1, .main p, .footer p {
+    margin: 0;
+}
+
+/* טבלה */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
