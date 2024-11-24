@@ -8,24 +8,38 @@
 </head>
 <body>
     <div class="header">
-        <h1>OnoAir</h1>
+        <h1><a href="index.html">OnoAir</a></h1>
     </div>
     <div class="main">
         <h2>New Flight</h2>
-        <form>
-            <p>Flight No.: <input type="text" name="flight-no" required></p>
-            <p>Origin: <input type="text" name="origin" required></p>
-            <p>Destination: <input type="text" name="destination" required></p>
-            <p>Boarding date: <input type="date" name="boarding-date" required></p>
-            <p>Boarding time: <input type="time" name="boarding-time" required></p>
-            <p>Arrival date: <input type="date" name="arrival-date" required></p>
-            <p>Arrival time: <input type="time" name="arrival-time" required></p>
-            <p>No. of seats: <input type="number" name="seats" required></p>
+        <form id="add-flight-form">
+			<p>Flight No.: <input type="text" id="flight-no" required></p>
+            <p>
+                Origin: 
+                <select id="origin" required>
+                    <!-- אפשרויות יוזנו דינמית -->
+                </select>
+            </p>
+            <p>
+                Destination: 
+                <select id="destination" required>
+                    <!-- אפשרויות יוזנו דינמית -->
+                </select>
+            </p>
+            <p>Boarding date: <input type="date" id="boarding-date" required></p>
+            <p>Boarding time: <input type="time" id="boarding-time" required></p>
+            <p>Arrival date: <input type="date" id="arrival-date" required></p>
+            <p>Arrival time: <input type="time" id="arrival-time" required></p>
+            <p>No. of seats: <input type="number" id="seats" required></p>
             <button type="submit">Save</button>
         </form>
     </div>
     <div class="footer">
-        <p>Add Flight Footer</p>
+	<a href="help.html" class="help-icon" aria-label="Help">
+        <span>?</span>
+    </a>
     </div>
+
+    <script src="js/addFlight.js"></script> <!-- קישור לקובץ ה-JavaScript -->
 </body>
 </html>

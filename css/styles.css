@@ -1,49 +1,75 @@
-/* הגדרות כלליות */
+/* כלליים */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* רקע כללי */
     display: flex;
     flex-direction: column;
+    height: 100vh; /* גובה הדף יהיה גובה מלא */
+}
+
+.header {
+    background-color: #ff69b4; /* קו ורוד אחיד לכל אורך ה-header */
+    padding: 10px;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
 }
 
-/* מסגרות אחידות */
-.header, .main, .footer {
-    width: 80%; /* רוחב אחיד */
-    border: 2px solid black; /* מסגרת שחורה בלבד */
-    margin: 10px 0; /* רווח בין המסגרות */
-    padding: 20px; /* ריווח פנימי */
-    text-align: center;
-    background-color: transparent; /* רקע שקוף */
-}
-
-/* גובה מותאם */
-.header, .footer {
-    height: 100px; /* גובה לכותרת ולתחתית */
-}
-
+/* Main Content */
 .main {
-    flex-grow: 1; /* תוכן המרכזי גמיש */
+    flex: 1; /* מאפשר לדף להתפשט ולהשאיר מקום לפס התחתון */
+    padding: 20px;
 }
 
-/* טקסט */
-.header h1, .main p, .footer p {
-    margin: 0;
-}
-
-/* טבלה */
+/* Table Design */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-table, th, td {
-    border: 1px solid black;
-    padding: 10px;
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Footer */
+.footer {
+    background-color: #ffb6c1; /* קו תחתון ורוד בהיר */
+    border-top: 5px solid #ff1493; /* קו ורוד כהה בקצה העליון */
+    position: absolute; /* פס תחתון תמיד בתחתית */
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+/* Help Icon */
+.help-icon {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.help-icon:hover {
+    background-color: #333333;
+    transform: scale(1.1);
 }
