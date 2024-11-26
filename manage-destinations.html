@@ -11,7 +11,7 @@
         <h1><a href="index.html">OnoAir</a></h1>
     </div>
     <div class="main">
-        <table>
+        <table id="destinationsTable">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -19,25 +19,17 @@
                     <th>Airport Website</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Tel Aviv</td>
-                    <td>Ben Gurion Airport</td>
-                    <td><a href="https://www.iaa.gov.il/en/">https://www.iaa.gov.il/en/</a></td>
-                </tr>
-                <tr>
-                    <td>New York</td>
-                    <td>John F. Kennedy International Airport</td>
-                    <td><a href="https://www.jfkairport.com/">https://www.jfkairport.com/</a></td>
-                </tr>
+            <tbody id="destinationsTableTbody">
+                <!-- יעדים יוזנו דינמית -->
             </tbody>
         </table>
-        <button>Add Destination</button>
+        <button id="add-destination-btn">Add Destination</button>
     </div>
     <div class="footer">
         <a href="help.html" class="help-icon" aria-label="Help">
             <span>?</span>
         </a>
     </div>
+    <script type="module" src="js/manageDestinations.js"></script>
 </body>
 </html>

@@ -1,26 +1,25 @@
-// js/manageFlights.js
-import { flightsData } from './flightsData.js';  // Correct import statement
-
 document.addEventListener('DOMContentLoaded', () => {
-    const flightsTableBody = document.querySelector("#flights-table tbody");
+    const flightsTableBody = document.querySelector("#flightsTableTbody");
 
-    // Make sure flightsData is available
-    if (!flightsData || flightsData.length === 0) {
+    // טוען טיסות מ-localStorage
+    const flightsData = JSON.parse(localStorage.getItem('flightsData')) || []; 
+
+    if (flightsData.length === 0) {
         console.error("No flights data found!");
         return;
     }
 
-    // Loop through each flight and add it to the table
+    // מעבר על כל הטיסות והוספתן לטבלה
     flightsData.forEach(flight => {
-        const row = document.createElement('tr');
-
+        const row = flightsTableBody.insertRow();
         row.innerHTML = `
             <td>${flight.flight_name}</td>
-            <td>${flight.departure.split('T')[0]}</td>  <!-- Extract date -->
+            <td>${flight.origin}</td>
             <td>${flight.destination}</td>
-            <td>${flight.departure.split('T')[1]}</td> <!-- Extract time -->
+            <td>${flight.boarding_date}</td>
+            <td>${flight.boarding_time}</td>
+            <td>${flight.arrival_date}</td>
+            <td>${flight.arrival_time}</td>
         `;
-
-        flightsTableBody.appendChild(row);
     });
 });
