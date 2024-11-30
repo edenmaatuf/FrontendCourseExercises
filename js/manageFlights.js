@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const flightsTableBody = document.querySelector("#flightsTableTbody");
-
-    // טוען טיסות מ-localStorage
     const flightsData = JSON.parse(localStorage.getItem('flightsData')) || []; 
 
     if (flightsData.length === 0) {
@@ -9,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // מעבר על כל הטיסות והוספתן לטבלה
     flightsData.forEach(flight => {
         const row = flightsTableBody.insertRow();
         row.innerHTML = `

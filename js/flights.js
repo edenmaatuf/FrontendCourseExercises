@@ -1,4 +1,3 @@
-// טוען נתוני טיסות
 import { flightsData } from './flightsData.js';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,11 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const arrivalTimeInput = document.getElementById('arrival_time');
     const seatsInput = document.getElementById('seats');
     const addFlightForm = document.getElementById('add-flight-form');
-
-    // יצירת מערך של כל היעדים הייחודיים מתוך הטיסות הקיימות
     const uniqueLocations = [...new Set(flightsData.map(flight => flight.origin))];
 
-    // מילוי רשימות הבחירה של מקור ויעד על סמך הנתונים הקיימים
     uniqueLocations.forEach(location => {
         const originOption = document.createElement('option');
         originOption.value = location;
@@ -34,11 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // הגדרת מינימום לתאריכים
     const today = new Date().toISOString().split('T')[0];
     boardingDateInput.min = today;
 
-    // ולידציה על תאריכים ושעות
     boardingDateInput.addEventListener('change', function () {
         arrivalDateInput.min = boardingDateInput.value;
     });
@@ -52,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ולידציה על שעות
     boardingTimeInput.addEventListener('input', validateTime);
     arrivalTimeInput.addEventListener('input', validateTime);
 
@@ -74,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ולידציה על מספר מושבים (מינימום 1)
     seatsInput.addEventListener('input', function () {
         if (seatsInput.value < 1 || isNaN(seatsInput.value)) {
             alert('מספר המושבים חייב להיות לפחות 1.');
@@ -82,23 +74,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // טיפול בהגשת הטופס
     addFlightForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
         const newFlight = {
             flight_id: flightsData.length + 1,
             flight_name: document.getElementById('flight_name').value,
-            boarding_date: boardingDateInput.value, // תאריך עלייה למטוס
-            boarding_time: boardingTimeInput.value, // שעת עלייה למטוס
-            arrival_date: arrivalDateInput.value, // תאריך נחיתה
-            arrival_time: arrivalTimeInput.value, // שעת נחיתה
+            boarding_date: boardingDateInput.value,
+            boarding_time: boardingTimeInput.value,
+            arrival_date: arrivalDateInput.value,
+            arrival_time: arrivalTimeInput.value,
             origin: originSelect.value,
             destination: destinationSelect.value,
-            link: "book-flight.html" // קישור ברירת מחדל
+            link: "book-flight.html"
         };
 
-        // הוספת הטיסה החדשה
         flightsData.push(newFlight);
         localStorage.setItem('flightsData', JSON.stringify(flightsData));
         alert('Flight added successfully!');

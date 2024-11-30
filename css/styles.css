@@ -1,36 +1,33 @@
-/* כלליים */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh; /* גובה הדף יהיה גובה מלא */
+    height: 100vh;
 }
 
 .header {
-    background-color: #ff69b4; /* קו ורוד אחיד לכל אורך ה-header */
+    background-color: #ff69b4;
     padding: 10px;
     display: flex;
     align-items: center;
 }
 
-/* Main Content */
 .main {
-    flex: 1; /* מאפשר לדף להתפשט ולהשאיר מקום לפס התחתון */
+    flex: 1;
     padding: 20px;
 }
 
-/* התאמות ייחודיות לעמוד Flight Search */
 .main.flight-search-page {
     display: flex;
     flex-direction: column;
-    align-items: center; /* מרכז את כל התוכן בעמוד */
-    justify-content: center; /* ממקם את התוכן באמצע העמוד אנכית */
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     }
     
-/* טקסט ממורכז */
+
 .center-text {
     text-align: center;
 }
@@ -39,32 +36,31 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    align-items: center; /* מרכז את תוכן הטופס */
+    align-items: center;
     width: 100%;
     max-width: 600px;
 }
 
-/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 400px; /* רוחב מקסימלי לטופס */
-    margin: 0; /* ביטול מרווחים אוטומטיים */
-    padding: 10px; /* רווח פנימי מסביב לטופס */
+    max-width: 400px;
+    margin: 0;
+    padding: 10px;
 }
 
 .form-group {
     display: flex;
-    justify-content: flex-start; /* תיישר את הכותרות והשדות לצד שמאל */
-    gap: 10px; /* רווח בין הכותרת לשדה */
+    justify-content: flex-start;
+    gap: 10px;
     max-width: 400px;
 }
 
 form p {
-    margin: 0; /* ביטול רווחים אוטומטיים בין התוויות לשדות */
+    margin: 0;
     display: flex;
-    justify-content: space-between; /* השדה והכותרת יהיו בקו אחד */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -78,8 +74,8 @@ select {
 }
 
 input {
-    flex: 1; /* השדה יתפוס את כל הרוחב הזמין */
-    max-width: 250px; /* הגבלת רוחב */
+    flex: 1;
+    max-width: 250px;
     padding: 8px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -87,7 +83,7 @@ input {
 }
 
 button {
-    width: fit-content; /* הכפתור יתאים את עצמו לטקסט */
+    width: fit-content;
     padding: 10px 20px;
     background-color: #ff69b4;
     color: white;
@@ -98,28 +94,25 @@ button {
     margin-top: 10px;
 }
 
-
 button:hover {
     background-color: #ff1493;
 }
 
-
 label {
-    width: 120px; /* כיוון קבוע לכותרת */
-    text-align: left; /* טקסט מיושר לשמאל */
+    width: 120px;
+    text-align: left;
     font-size: 14px;
 }
 
 input, select {
-    flex: 1; /* השדה יתפוס את כל הרוחב הזמין */
-    max-width: 250px; /* הגבלת רוחב */
+    flex: 1;
+    max-width: 250px;
     padding: 8px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-/* Table Design */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -136,16 +129,47 @@ table th {
     background-color: #f2f2f2;
 }
 
-/* Footer */
-.footer {
-    background-color: #ffb6c1; /* קו תחתון ורוד בהיר */
-    border-top: 5px solid #ff1493; /* קו ורוד כהה בקצה העליון */
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box; /* ריווח נכון */
+#bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
-/* Help Icon */
+#bookings-table th, #bookings-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+#bookings-table th {
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+#bookings-table td:first-child {
+    width: 100px;
+    text-align: center;
+}
+
+#bookings-table img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#bookings-table td:last-child {
+    width: auto;
+}
+
+.footer {
+    background-color: #ffb6c1;
+    border-top: 5px solid #ff1493;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .help-icon {
     position: fixed;
     bottom: 10px;

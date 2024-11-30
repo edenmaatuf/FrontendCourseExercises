@@ -64,7 +64,7 @@ export const flightsData = [
         "destination": "Rome",
         "arrival_date": "2024-12-05",
         "arrival_time": "18:30",
-        "image_url": "https://fiesta.co.il/wp-content/uploads/2021/09/rome-2093608_1280-1.jpg",
+        "image_url": "https://www.elal.com/magazine/wp-content/uploads/2017/01/shutterstock_147643964.jpg",
         "link": "book-flight.html",
         "airportName": "Leonardo da Vinci–Fiumicino Airport",
         "airportWebsite": "https://www.adr.it/web/aeroporti-di-roma-en/"
@@ -141,5 +141,4 @@ export const flightsData = [
     }
 ];
 
-// שמירת הנתונים ב-localStorage
 localStorage.setItem('flightsData', JSON.stringify(flightsData));

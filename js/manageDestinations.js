@@ -2,23 +2,17 @@ import { flightsData as importedFlightsData } from './flightsData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const destinationsTableBody = document.getElementById("destinationsTableTbody");
-    const addDestinationBtn = document.getElementById("add-destination-btn");  // ודא שאתה מקשר את הכפתור
+    const addDestinationBtn = document.getElementById("add-destination-btn");
 
-    // טוען את הנתונים מה-localStorage
     let flightsData = JSON.parse(localStorage.getItem('flightsData')) || [];
 
-       
-    // אם אין טיסות, מציג הודעה מתאימה
     if (flightsData.length === 0) {
         destinationsTableBody.innerHTML = `<tr><td colspan="3">No destinations available</td></tr>`;
         console.warn("No flights data found!");
         return;
     }
-
-    // שימוש ב-set כדי לקבל רק את היעדים הייחודיים
     const uniqueDestinations = [...new Set(flightsData.map(flight => flight.destination))];
 
-    // מעבר על כל היעדים והוספתם לטבלה
     uniqueDestinations.forEach(destination => {
         const matchingFlights = flightsData.filter(flight => flight.destination === destination);
 
@@ -31,9 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
     });
-
-    // מאזין לאירוע לחיצה על כפתור הוספת יעד
+    
     addDestinationBtn.addEventListener('click', () => {
-        window.location.href = 'add-destination.html';  // עובר לדף add-destination
+        window.location.href = 'add-destination.html';
     });
 });

@@ -8,17 +8,30 @@
 </head>
 <body>
     <div class="header">
-		<h1><a href="index.html">OnoAir</a></h1>
+        <h1><a href="index.html">OnoAir</a></h1>
     </div>
-    <div class="main">
+    <div class="main my-booking-page">
         <h2>My Bookings</h2>
-        <p>Tel Aviv to Krakow | Boarding: 16/7/2025 20:00 | Passengers: 5</p>
-        <p>Krakow to Larnaca | Boarding: 20/5/2024 20:00 | Passengers: 6</p>
+
+        <table id="bookings-table">
+            <thead>
+                <tr>
+                    <th>Destination Image</th>
+                    <th>Flight Details</th>
+                </tr>
+            </thead>
+            <tbody id="bookings-table-body">
+              
+            </tbody>
+        </table>
     </div>
+
     <div class="footer">
-	<a href="help.html" class="help-icon" aria-label="Help">
-        <span>?</span>
-    </a>
+        <a href="help.html" class="help-icon" aria-label="Help">
+            <span>?</span>
+        </a>
     </div>
+
+    <script type="module" src="js/myBookings.js"></script>
 </body>
 </html>

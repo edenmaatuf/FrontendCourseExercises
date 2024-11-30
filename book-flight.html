@@ -8,21 +8,31 @@
 </head>
 <body>
     <div class="header">
-		<h1><a href="index.html">OnoAir</a></h1>
+        <h1><a href="index.html">OnoAir</a></h1>
     </div>
-    <div class="main">
-        <h2>Book a Flight</h2>
-        <p>Origin: Tel Aviv</p>
-        <p>Destination: Krakow</p>
-        <p>Boarding: 16/7/2025 20:00</p>
-        <p>Landing: 17/7/2025 01:00</p>
-        <p>No. of Passengers: 5</p>
-        <button type="submit">Save</button>
+    <div class="main book-flight-page">
+        <h2 class=>Book a flight</h2>
+
+        <div class="flight-info-box">
+            <p><strong>Origin:</strong> <span id="origin"></span><strong> Boarding:</strong> <span id="boarding_date"></span> <span id="boarding_time"></span></p>
+            <p><strong>Destination:</strong> <span id="destination"></span><strong> Landing:</strong> <span id="arrival_date"></span> <span id="arrival_time"></span></p>
+        </div>
+
+        <div class="passenger-info">
+            <label for="num-passengers">Number of Passengers:</label>
+            <input type="number" id="num-passengers" min="1" value="1">
+        </div>
+
+        <div id="passenger-fields"></div>
+
+        <button id="book-btn">Save</button>
     </div>
     <div class="footer">
-	<a href="help.html" class="help-icon" aria-label="Help">
-        <span>?</span>
-    </a>
+        <a href="help.html" class="help-icon" aria-label="Help">
+            <span>?</span>
+        </a>
     </div>
+
+    <script type="module" src="js/bookFlight.js"></script>
 </body>
 </html>
