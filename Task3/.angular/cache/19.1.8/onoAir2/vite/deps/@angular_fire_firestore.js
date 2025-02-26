@@ -55,8 +55,8 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule
 } from "./chunk-PZJ5FSGH.js";
-import "./chunk-64UGZ4AE.js";
 import "./chunk-BXL443VD.js";
+import "./chunk-64UGZ4AE.js";
 import {
   Observable,
   __rest,

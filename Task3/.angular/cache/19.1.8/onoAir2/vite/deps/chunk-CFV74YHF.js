@@ -3,6 +3,9 @@ import {
   _VisuallyHiddenLoader
 } from "./chunk-YEDWTOB7.js";
 import {
+  BidiModule
+} from "./chunk-QLNMAZ23.js";
+import {
   Platform,
   _getEventTarget,
   _getFocusedElementPierceShadowDom,
@@ -11,10 +14,7 @@ import {
   coerceElement,
   coerceNumberProperty,
   normalizePassiveListenerOptions
-} from "./chunk-B7GN4T2G.js";
-import {
-  BidiModule
-} from "./chunk-QLNMAZ23.js";
+} from "./chunk-N6TOVCFP.js";
 import {
   DOCUMENT
 } from "./chunk-ZO5XD7MN.js";
@@ -117,6 +117,7 @@ var LEFT_ARROW = 37;
 var UP_ARROW = 38;
 var RIGHT_ARROW = 39;
 var DOWN_ARROW = 40;
+var DELETE = 46;
 var ZERO = 48;
 var NINE = 57;
 var A = 65;
@@ -5192,6 +5193,7 @@ var _MatInternalFormField = class __MatInternalFormField {
 
 export {
   BACKSPACE,
+  TAB,
   ENTER,
   ESCAPE,
   SPACE,
@@ -5203,13 +5205,17 @@ export {
   UP_ARROW,
   RIGHT_ARROW,
   DOWN_ARROW,
+  DELETE,
   A,
   hasModifierKey,
   ObserversModule,
   addAriaReferencedId,
   removeAriaReferencedId,
+  AriaDescriber,
   ActiveDescendantKeyManager,
   FocusKeyManager,
+  InteractivityChecker,
+  FocusTrapFactory,
   CdkTrapFocus,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
@@ -5259,4 +5265,4 @@ export {
   MatRippleLoader,
   _MatInternalFormField
 };
-//# sourceMappingURL=chunk-ACDL4BEM.js.map
+//# sourceMappingURL=chunk-CFV74YHF.js.map

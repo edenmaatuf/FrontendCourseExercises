@@ -10,7 +10,9 @@ import { Destination, Flight } from "@types";
 import { first, map, Subscription } from "rxjs";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MatRadioModule } from "@angular/material/radio";
-import { numOfSeatsPolicy } from "../../utilities/util";
+import { numOfSeatsPolicy, positiveNumberValidator } from "../../utilities/util";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
     selector: "app-admin-flight-form",
@@ -18,6 +20,8 @@ import { numOfSeatsPolicy } from "../../utilities/util";
         CommonModule,
         MatFormFieldModule,
         MatRadioModule,
+        MatButtonModule,
+        MatIconModule,
         ReactiveFormsModule,
         MatSelectModule,
         MatInputModule,
@@ -44,15 +48,16 @@ export class AdminFlightFormComponent {
     ) {
         this.flightForm = this.formBuilder.group(
             {
-                // destonation name has to be filled in
+                flight_name: ["", Validators.required],
                 origin: ["", Validators.required],
                 destination: ["", Validators.required],
                 boarding_date: ["", Validators.required],
                 boarding_time: ["", Validators.required],
                 arrival_date: ["", Validators.required],
                 arrival_time: ["", Validators.required],
+                price: [null, [Validators.required, positiveNumberValidator]],
                 numberOfPassengers: ["", [Validators.required, Validators.min(numOfSeatsPolicy.min), Validators.max(numOfSeatsPolicy.max)]],
-                status: [null, Validators.required]
+                status: [true, Validators.required]
             },
             {
                 validators: [
@@ -62,6 +67,10 @@ export class AdminFlightFormComponent {
                 ],
             }
         );
+
+        this.flightForm.valueChanges.subscribe(data=> {
+            console.log(data, this.flightForm);
+        });
     }
 
     ngOnDestroy(): void {
